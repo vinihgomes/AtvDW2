@@ -1,0 +1,36 @@
+<script type="text/javascript">
+  function startTime() {
+    // início de bloco, comentar a partir daqui_________
+
+    var today = new Date();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    var s = today.getSeconds();
+
+    //término do bloco, comentar até aqui.______________
+    //Ao se declarar várias variáveis, não é necessário repetição do var/let/const. Basta definir na primeira linha, utilizar vírgula (,) ao invés de ponto e vírgula (;) exceto na última variável, conforme exemplo abaixo (descomentar ele para testar.)
+    /*
+    var today = new Date(),
+      h = today.getHours(),
+      m = today.getMinutes(),
+      s = today.getSeconds();
+    */
+    m = checkTime(m);
+    s = checkTime(s);
+    document.getElementById('txt').innerHTML = h + ':' + m + ':' + s;
+    t = setTimeout('startTime()', 500);
+  }
+
+  function checkTime(i) {
+    if (i < 10) {
+      i = '0' + i;
+    }
+    return i;
+  }
+</script>
+
+<div id="txt">
+  <script type="text/javascript">
+    document.write(startTime());
+  </script>
+</div>
