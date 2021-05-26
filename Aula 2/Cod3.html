@@ -1,0 +1,27 @@
+<script>
+  today = 25;
+  if (today == 15) console.log('Hoje é dia 25');
+  console.log('Grande dia!');
+</script>
+
+<!--
+      Não abreviar os comandos! No caso acima, apenas o primeiro console.log faz parte do if, o segundo será executado independente de satisfazer ou não a condição, porém tem gente que pode entender o seguinte:
+      
+      <script>
+          today = 25;
+          if (today == 15) {
+              console.log('Hoje é dia 25');
+              console.log('Grande dia!');
+          }
+      </script>
+  
+      Mesmo que a pessoa esteja errada, por boa prática deve ser realizado dessa forma:
+  
+      <script>
+          today = 25;
+          if (today == 15) {
+              console.log('Hoje é dia 25');
+          }
+          console.log('Grande dia!');
+      </script>
+  -->
