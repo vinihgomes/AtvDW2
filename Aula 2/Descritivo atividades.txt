@@ -1,0 +1,1 @@
+Demonstrar códigos que fogem das boas práticas, aplicá-las e explicá-las.
