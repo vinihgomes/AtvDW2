@@ -1,0 +1,47 @@
+<html>
+  <head> </head>
+  <body>
+    <script>
+      function Produto() {
+        this.item = ' ';
+        this.preço = ' ';
+        this.quantidade = ' ';
+      }
+
+      function Gondola() {
+        Produto.call(this);
+        this.corredor = ' ';
+        this.prateleira = ' ';
+      }
+      function UnidadeMercado() {
+        Gondola.call(this);
+        this.localidade = ' ';
+      }
+
+      Gondola.prototype = Object.create(Produto.prototype);
+      UnidadeMercado.prototype = Object.create(Gondola.prototype);
+
+      var novoProduto = new Produto();
+      novoProduto.item = 'Detergente';
+      novoProduto.preço = 1.35;
+      novoProduto.quantidade = 10;
+      console.log(novoProduto.item);
+      console.log(novoProduto.preço);
+      console.log(novoProduto.quantidade);
+
+      var novaGondola = new Gondola();
+      novaGondola.Produto = novoProduto;
+      novaGondola.corredor = 'C';
+      novaGondola.prateleira = 4;
+
+      console.log(novaGondola.Produto);
+
+      var novaUnidadeMercado = new UnidadeMercado();
+      novaUnidadeMercado.novaGondola = novaGondola;
+      novaUnidadeMercado.localidade = 'São Paulo';
+      console.log(novaUnidadeMercado.localidade);
+      console.log(novaUnidadeMercado.novaGondola);
+      console.log(novaUnidadeMercado.novaGondola.Produto);
+    </script>
+  </body>
+</html>
